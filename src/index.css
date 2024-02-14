@@ -9,62 +9,91 @@
     --secondary-color : #F5F7FB;
 }
 
-body {
-    font-family: var(--primary-font);
-}
-
 .init-container {
     font-family: var(--primary-font);
-    position: relative;
+    width: 100%;
+
+}
+
+.init-container .top-image {
+    position: absolute;
+    width: 10em;
+    height: 10em;
+    top: 0;
+    right: 0;
+    z-index: -1;
+
+}
+
+.init-container .bottom-image {
+    position: absolute;
+    width: 10em;
+    height: 10em;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+
+}
+
+.init-container .init-main-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
-
-
-.image-container .top-img {
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
-.image-container .bottom-img {
-    position: absolute;
-    left: 0;
-    top: calc(100vh - 15em);
-}
-
-.init-container .start-container{
-    text-align: center;
-}
-
-.start-container .init-title {
-    font-size: 5rem;
+.init-main-container h1{
+    font-size: 2rem;
     font-weight: bold;
 }
 
-.start-container .init-description {
-    font-size: 1.rem;
+.init-main-container p {
     padding: 1em;
+    text-align: center;
 }
 
-.start-container button {
-    padding: 1em 2em;
+.init-main-container button {
+    padding: 1em 3em;
+    outline: none;
     border: none;
     background-color: var(--primary-color);
     color: var(--secondary-color);
     border-radius: 5px;
-    font-size: 1.2rem;
     cursor: pointer;
+    transition:box-shadow 0.2s ease-in-out;
 }
 
-.start-container button:focus {
-    outline: none;
+.init-main-container button:hover {
+    box-shadow: -5px -5px 50px -4px rgba(0, 0, 0, 0.3);
 }
-
-.start-container button:active {
+.init-main-container button:active {
     box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
-    
+
+
+@media (min-width:600px) {
+    .init-container .top-image {
+        width: 15em;
+        height: 15em;
+    }
+
+    .init-container .bottom-image {
+        width: 15em;
+        height: 15em;
+    }
+
+    .init-main-container h1 {
+        font-size: 5rem;
+    }
+
+    .init-main-container p {
+        font-size: 2rem;
+    }
+
+    .init-main-container button {
+        padding: 1em 3em;
+        font-size: 1.5rem;
+    }
+
+}
